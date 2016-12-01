@@ -1,33 +1,26 @@
-<!doctype html>
-<html lang="en" ng-app='LunchCheck'>
-    <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style>
-.message {
-	font-size: 1.3em;
-	font-weight: bold;
-}
-</style>
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-    </head>
-    <body>
-    <div class="container" ng-controller="LunchCheckController">
-      <h1>Lunch Checker</h1>
-      <div class="form-group">
-        <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="menuItems">
-      </div>
-      <div class="form-group">
-        <button class="btn btn-default" ng-click="checkItemCount()">Check If Too Much</button>
-      </div>
-      <div class="form-group message"> 
-        <!-- Your message can go here. --> 
-        <p>{{messageToUser}}
-      </div>
-    </div>
+<!doctype html
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment Solution for Module 2</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+<header>
+    <h1>Our Menu</h1>
+</header>
+<section id="chicken">
+    <h2>Chicken</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </section>
+  <section id="beef">
+    <h2>Beef</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</section>
+<section id="sushi">
+    <h2>Sushi</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</section>
 </body>
+
 </html>
