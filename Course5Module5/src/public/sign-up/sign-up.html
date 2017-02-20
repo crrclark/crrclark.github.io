@@ -1,0 +1,245 @@
+<div class="container" ng-controller="SignUpController as ctrl">
+  <div class="col-xs-12 col-sm-12">
+    <form class="form-horizontal signup" role="form" name="signupForm" ng-submit="ctrl.signUp()" novalidate>
+      <fieldset>
+        <legend>Sign up for our newsletter</legend>
+
+        <!--first name-->
+        <div class="form-group">
+          <label
+              for="firstname"
+              class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-3
+                    hidden-xs
+                    control-label">First Name:
+          </label>
+          <div
+              class="
+                    col-lg-9
+                    col-md-9
+                    col-sm-9
+                    col-xs-12">
+            <input type="text"
+                   class="form-control"
+                   id="firstname"
+                   name="firstname"
+                   placeholder="First Name"
+                   pattern="^[a-zA-Z]+$"
+                   ng-model="ctrl.data.firstName"
+                   required>
+          </div>
+        </div>
+
+        <!--first name check-->
+        <div class="
+              col-lg-offset-3
+              col-md-offset-3
+              col-sm-offset-3">
+
+          <div class="help-block"
+               ng-show="signupForm.firstname.$invalid && !signupForm.firstname.$pristine">
+            <span class="glyphicon glyphicon-remove"></span>
+            <span>First name is required and must be alphabetical only.</span>
+          </div>
+        </div>
+
+
+        <!--last name-->
+        <div class="form-group">
+          <label for="lastname"
+                 class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-3
+                    hidden-xs
+                    control-label">Last Name:
+          </label>
+          <div
+              class="
+                    col-lg-9
+                    col-md-9
+                    col-sm-9
+                    col-xs-12">
+            <input type="text"
+                   class="form-control"
+                   id="lastname"
+                   name="lastname"
+                   placeholder="Last Name"
+                   pattern="^[a-zA-Z]+$"
+                   ng-model="ctrl.data.lastName"
+                   required>
+          </div>
+        </div>
+
+        <!--last name check-->
+        <div class="
+              col-lg-offset-3
+              col-md-offset-3
+              col-sm-offset-3">
+
+          <div class="help-block"
+               ng-show="signupForm.lastname.$invalid && !signupForm.lastname.$pristine">
+            <span class="glyphicon glyphicon-remove"></span>
+            <span>Last name is required and must be alphabetical only.</span>
+          </div>
+        </div>
+
+
+        <!--email-->
+        <div class="form-group">
+          <label for="email"
+                 class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-3
+                    hidden-xs
+                    control-label">Email:
+          </label>
+          <div
+              class="
+                    col-lg-9
+                    col-md-9
+                    col-sm-9
+                    col-xs-12">
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   name="email"
+                   placeholder="Email"
+                   ng-model="ctrl.data.email"
+                   required>
+          </div>
+        </div>
+
+        <!--email check-->
+        <div class="
+              col-lg-offset-3
+              col-md-offset-3
+              col-sm-offset-3">
+
+          <div class="help-block"
+               ng-show="signupForm.email.$invalid && !signupForm.email.$pristine && !ctrl.isSignedUp">
+            <span class="glyphicon glyphicon-remove"></span>
+            <span ng-show="signupForm.email.$error.required">Email address is required.</span>
+            <span ng-show="!signupForm.email.$error.required">Enter a valid email address.</span>
+          </div>
+        </div>
+
+
+        <!--telephon-->
+        <div class="form-group">
+          <label for="areacode"
+                 class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-3
+                    hidden-xs
+                    control-label">Tel. Number:
+          </label>
+          <div class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-4
+                    col-xs-5">
+            <div class="input-group">
+              <div class="input-group-addon">(</div>
+              <input type="tel"
+                     class="form-control"
+                     id="areacode"
+                     name="areacode"
+                     ng-model="ctrl.data.tel.areaCode"
+                     placeholder="Area code ###"
+                     pattern="\d{3}"
+                     maxlength="3"
+                     required>
+              <div class="input-group-addon">)</div>
+            </div>
+          </div>
+          <div class="
+                    col-lg-6
+                    col-md-6
+                    col-sm-5
+                    col-xs-7">
+            <input type="tel"
+                   class="form-control"
+                   id="telnum"
+                   name="telnum"
+                   ng-model="ctrl.data.tel.number"
+                   placeholder="Tel. Number ###-####"
+                   pattern="\d{3}-\d{4}"
+                   maxlength="8"
+                   required>
+          </div>
+        </div>
+
+        <!--telefon check-->
+        <div class="
+              col-lg-offset-3
+              col-md-offset-3
+              col-sm-offset-3">
+
+          <div class="help-block"
+               ng-show="!ctrl.isSignedUp && signupForm.areacode.$error.required && !signupForm.areacode.$pristine
+               || signupForm.telnum.$error.required && !signupForm.telnum.$pristine">
+            <span class="glyphicon glyphicon-remove"></span>
+            <span>Area code and phone number are required in format (###) ###-####.</span>
+          </div>
+        </div>
+
+        <!--favorite dish-->
+        <div class="form-group">
+          <label for="favoritedish"
+                 class="
+                    col-lg-3
+                    col-md-3
+                    col-sm-3
+                    hidden-xs
+                    control-label">Favorite Dish:
+          </label>
+          <div
+              class="
+                  col-lg-3
+                  col-md-3
+                  col-sm-3
+                  col-xs-3">
+            <input type="text"
+                   class="form-control"
+                   id="favoritedish"
+                   name="favoritedish"
+                   ng-model="ctrl.data.favoriteDish"
+                   placeholder="Favorite Dish"
+                   pattern="^[a-zA-Z]{1,2}\d{1,2}$"
+                   maxlength="4">
+          </div>
+        </div>
+      </fieldset>
+
+      <!--submit-->
+      <div class="form-group">
+        <div class="
+            col-sm-offset-3
+            col-sm-9">
+          <button type="submit"
+                  class="btn btn-primary"
+                  ng-disabled="signupForm.$invalid">Sign Up
+          </button>
+        </div>
+      </div>
+
+      <!--messages-->
+      <div class="
+              col-lg-offset-3
+              col-md-offset-3
+              col-sm-offset-3">
+
+        <div class="help-block message" ng-show="ctrl.isChecked">
+          <span ng-show="ctrl.isSignedUp" class="glyphicon glyphicon-ok"></span>
+          <span ng-show="!ctrl.isSignedUp" class="glyphicon glyphicon-remove"></span>
+          <span>{{ctrl.data.message}}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
